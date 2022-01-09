@@ -7,15 +7,17 @@ import NextImage from 'next/image'
 import logoImg from 'public/brand/nftmas-logo-on-avax.png'
 import React from 'react'
 import { useMoralis } from 'react-moralis'
-import { env } from 'shared/environment'
 import 'twin.macro'
 
 export default function IndexPage() {
   const { isAuthenticated, logout, authenticate } = useMoralis()
 
   return <>
-    <div tw="flex justify-center mt-20 mb-16">
+    <div tw="flex flex-col items-center justify-center mt-16 mb-16">
       <NextImage src={logoImg} width='250' height='72' />
+      <div tw="max-w-prose mt-4 text-center text-christwhite">
+        Christmas is over but #NFTMas just begun. Gift unique NFT presents to your loved ones on Avalanche. For free.
+      </div>
     </div>
 
     <Wrapper>
@@ -41,8 +43,16 @@ export default function IndexPage() {
       </EightBitBox>
     </Wrapper>
 
-    {!env.isProduction && isAuthenticated &&
-      <div tw="text-center mt-4"><button onClick={logout}>Logout</button></div>}
+    <div tw="flex justify-center">
+      <div tw="max-w-prose mt-6 text-center text-christwhite">
+        Built by <a target="_blank" href="https://twitter.com/dennis_zoma/" tw="underline">@dennis_zoma</a> as part of a Hackathon
+        {isAuthenticated && <>
+          &nbsp;• <button tw="underline" onClick={logout}>Disconnect Wallet</button>
+        </>}
+      </div>
+    </div>
+
+
   </>
 }
 
