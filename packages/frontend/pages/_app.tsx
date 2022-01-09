@@ -22,9 +22,20 @@ const Snowfall = dynamic(() => import('react-snowfall'), { ssr: false })
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <DefaultSeo
-      dangerouslySetAllPagesToNoFollow={true} // TODO
-      dangerouslySetAllPagesToNoIndex={true} // TODO
-      defaultTitle='NFTMas on Avalanche'
+      dangerouslySetAllPagesToNoFollow={!env.isProduction}
+      dangerouslySetAllPagesToNoIndex={!env.isProduction}
+      defaultTitle='NFTMas.xyz on Avalanche'
+      description='Gift free NFTs to your loved ones on Avalanche.'
+      openGraph={{
+        type: 'website',
+        locale: 'en',
+        url: 'https://nftmas.xyz',
+        site_name: 'NFTMas.xyz',
+      }}
+      twitter={{
+        handle: '@dennis_zoma',
+      }}
+
     />
 
     <Head>
