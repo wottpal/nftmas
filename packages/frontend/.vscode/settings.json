@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "search.exclude": {
+    "artifacts/**": true,
+  },
+  // "search.useIgnoreFiles": false,
+}

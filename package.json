@@ -1,0 +1,25 @@
+{
+  "name": "@nftmas/monorepo",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "yarn hardhat:compile && concurrently -p \"[{name}]\" -n \"NEXT,HARDHAT\" \"yarn frontend:dev\" \"yarn hardhat:chain\"",
+    "frontend:dev": "yarn workspace @nftmas/frontend next",
+    "frontend:build": "yarn workspace @nftmas/frontend next build",
+    "frontend:start": "yarn workspace @nftmas/frontend next start",
+    "hardhat:chain": "yarn workspace @nftmas/hardhat chain",
+    "hardhat:compile": "yarn workspace @nftmas/hardhat compile",
+    "hardhat:deploy": "yarn workspace @nftmas/hardhat deploy",
+    "hardhat:deploy-fuji": "yarn workspace @nftmas/hardhat deploy-fuji",
+    "hardhat:deploy-avax": "yarn workspace @nftmas/hardhat deploy-avax"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@nftmas/hardhat",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "chain": "yarn hardhat node",
+    "compile": "yarn hardhat compile --force",
+    "deploy": "yarn compile && yarn hardhat run scripts/deploy.ts --network localhost",
+    "deploy-fuji": "yarn compile && yarn hardhat run scripts/deploy.ts --network fuji",
+    "deploy-avax": "yarn compile && yarn hardhat run scripts/deploy.ts --network avax"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.4.1",
+    "@typechain/ethers-v5": "^8.0.5",
+    "@typechain/hardhat": "^3.1.0",
+    "@typechain/web3-v1": "^4.0.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^17.0.4",
+    "chai": "^4.3.4",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.2",
+    "hardhat": "^2.8.0",
+    "ts-node": "^10.4.0",
+    "typechain": "^6.1.0",
+    "typescript": "^4.5.4"
+  }
+}

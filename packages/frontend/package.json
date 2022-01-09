@@ -1,0 +1,65 @@
+{
+  "name": "@nftmas/frontend",
+  "license": "MIT",
+  "version": "1.0.0",
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
+    }
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.6.0",
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@walletconnect/web3-provider": "^1.7.0",
+    "axios": "^0.24.0",
+    "dayjs": "^1.10.7",
+    "ethers": "^5.5.3",
+    "moralis": "^0.0.183",
+    "next": "^12.0.7",
+    "next-seo": "^4.28.1",
+    "nft.storage": "^5.2.0",
+    "nprogress": "^0.2.0",
+    "react": "^17.0.2",
+    "react-canvas-confetti": "^1.2.1",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.22.5",
+    "react-moralis": "^0.3.11",
+    "react-snowfall": "^1.1.1",
+    "use-async-effect": "^2.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@dethcrypto/eth-sdk": "^0.2.4",
+    "@dethcrypto/eth-sdk-client": "^0.1.6",
+    "@emotion/babel-plugin": "^11.7.2",
+    "@metamask/types": "^1.0.0",
+    "@next/eslint-plugin-next": "^12.0.7",
+    "@types/node": "^16.11.6",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-macros": "^3.1.0",
+    "eslint": "^8.6.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^2.2.19",
+    "ts-node": "^10.4.0",
+    "twin.macro": "^2.8.2",
+    "typescript": "^4.5.4"
+  }
+}
