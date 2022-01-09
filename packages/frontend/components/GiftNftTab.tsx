@@ -73,13 +73,15 @@ export const GiftNftTab: FC<GiftNftTabProps> = () => {
    * 1. Fetches available layers
    * 2. Generates a cryptographically-proof randomized NFT-image with HTMLCanvas
    * 3. Uploads metadata & image via NFT.storage and mints via the NFTMas-contract
-   * @param e If `e.altKey === true` a DRY-run is performed without actually minting
+   * @param e If `e.altKey === true` a DRY-run in dev-environment is performed without actually minting
    */
   const [generatedNft, setGeneratedNft] = useState<GeneratedNft>()
   const generateAndMintNft = async (e: MouseEvent<HTMLButtonElement>) => {
-    if (!signer && !e.altKey) throw new Error('No signer to mint NFT')
+    const isDryRun = e.altKey && !env.isProduction
     const to = form.getValues('to')?.toLowerCase()
-    if (!to && !e.altKey) throw new Error('No receiver address')
+    if (!signer || !to) {
+      setErrorState('Error while creating NFT. Refresh and try again.')
+    }
 
     setErrorState(undefined)
     setGeneratedNft(undefined)
@@ -102,7 +104,7 @@ export const GiftNftTab: FC<GiftNftTabProps> = () => {
     let mintedEvent: MintedEvent
     try {
       setLoadingState('Mint it 🎁')
-      mintedEvent = e.altKey
+      mintedEvent = isDryRun
         ? (await waitTime(2000) && {
           args: { to, from: account, tokenId: BigNumber.from(42), tokenUri: 'bafyreih7blkkbmlniq4q5koyec45cpozoq3tk6nxxkcffglwdk2rosooiy' }
         }) as MintedEvent

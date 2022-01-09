@@ -1,0 +1,8 @@
+{
+  "search.exclude": {
+    "yarn.lock": true,
+    "packages/frontend/yarn.lock": true,
+    "packages/frontend/artifacts/": true,
+    "packages/hardhat/yarn.lock": true,
+  },
+}
